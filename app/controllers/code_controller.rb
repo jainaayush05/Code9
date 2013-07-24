@@ -9,12 +9,15 @@ def show
 	hash = Hash[@cookies.map.with_index.to_a]
 	hash["#{params[:id]}"]
 	@flag=false
-	@cookies.each do |c|
-		if c.split("!!!!")[0].eql? params[:id]
-			@flag=true
-			break
+	if(@cookies[0])
+		@cookies.each do |c|
+			if c.split("!!!!")[0].eql? params[:id]
+				@flag=true
+				break
+			end
 		end
 	end
+	
 	if !@flag
 	cookies[:r10]=cookies[:r9]
 	cookies[:r9]=cookies[:r8]
@@ -26,6 +29,8 @@ def show
 	cookies[:r3]=cookies[:r2]
 	cookies[:r2]=cookies[:r1]
 	cookies[:r1]={ :value => "#{params[:id]}!!!!#{Time.now.strftime("%A  %-d/%-m/%y  %H:%M ")}!!!!Aayush"}
+	else
+	
 	end
 	render('show')
 end

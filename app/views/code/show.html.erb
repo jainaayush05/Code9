@@ -146,7 +146,7 @@
             </ul>
           </div>
           
-            <a href="#sidebar" class="brand" style="padding: 16px 0px 12px;"><i class="icon-align-justify icon-3"></i></a>
+            <a href="#sidebar" class="brand" style="padding: 16px 14px 12px;"><i class="icon-align-justify icon-3"></i></a>
 			<input class="input-xxlarge" style="margin-top: 12px;margin-left: 24px;" type="text" id="docname" placeholder="Untitled"></input>
 			<h3 id="docname-txt" style="margin-top: 12px;margin-left: 24px;display: none;" placeholder="Unitiled">Aayush</h3>
             <div class="nav-collapse collapse pull-right">
@@ -160,7 +160,7 @@
                   <ul class="dropdown-menu">
                     <li><select id="selMode"><option value="abap">ABAP</option><option value="asciidoc">AsciiDoc</option><option value="c9search">C9Search</option><option value="coffee">CoffeeScript</option><option value="coldfusion">ColdFusion</option><option value="csharp">C#</option><option value="css">CSS</option><option value="curly">Curly</option><option value="dart">Dart</option><option value="diff">Diff</option><option value="dot">Dot</option><option value="ftl">FreeMarker</option><option value="glsl">Glsl</option><option value="golang">Go</option><option value="groovy">Groovy</option><option value="haxe">haXe</option><option value="haml">HAML</option><option value="html">HTML</option><option value="c_cpp">C/C++</option><option value="clojure">Clojure</option><option value="jade">Jade</option><option value="java">Java</option><option value="jsp">JSP</option><option value="javascript">JavaScript</option><option value="json">JSON</option><option value="jsx">JSX</option><option value="latex">LaTeX</option><option value="less">LESS</option><option value="lisp">Lisp</option><option value="scheme">Scheme</option><option value="liquid">Liquid</option><option value="livescript">LiveScript</option><option value="logiql">LogiQL</option><option value="lua">Lua</option><option value="luapage">LuaPage</option><option value="lucene">Lucene</option><option value="lsl">LSL</option><option value="makefile">Makefile</option><option value="markdown">Markdown</option><option value="mushcode">TinyMUSH</option><option value="objectivec">Objective-C</option><option value="ocaml">OCaml</option><option value="pascal">Pascal</option><option value="perl">Perl</option><option value="pgsql">pgSQL</option><option value="php">PHP</option><option value="powershell">Powershell</option><option value="python">Python</option><option value="r">R</option><option value="rdoc">RDoc</option><option value="rhtml">RHTML</option><option value="ruby">Ruby</option><option value="scad">OpenSCAD</option><option value="scala">Scala</option><option value="scss">SCSS</option><option value="sass">SASS</option><option value="sh">SH</option><option value="sql">SQL</option><option value="stylus">Stylus</option><option value="svg">SVG</option><option value="tcl">Tcl</option><option value="tex">Tex</option><option value="text">Text</option><option value="textile">Textile</option><option value="tmsnippet">tmSnippet</option><option value="toml">toml</option><option value="typescript">Typescript</option><option value="vbscript">VBScript</option><option value="xml">XML</option><option value="xquery">XQuery</option><option value="yaml">YAML</option></select></li>
                   </ul>
-                <li><a href="#"><i class="icon-plus icon-3"></i></a></li>
+                <li><a href="<%= root_url%>" target="_blank"><i class="icon-plus icon-3"></i></a></li>
                 <li
               </ul>
             </div><!--/.nav-collapse -->
@@ -186,7 +186,7 @@
 
             <div class="card">
               <div class="row-fluid">
-               <h3 class="card-heading simple">Chat <a class="pull-right"><users></users> online</a></h3>
+               <h3 class="card-heading simple">Chat <a class="pull-right"><users></users></a></h3>
                
               </div>
                <div class="card-body" id ="chat" style="overflow: auto;max-height: 355px;">
@@ -211,45 +211,50 @@
     <div id="footer">
       <div class="row-fluid" align = "center" style="margin-top: 5px;">
         <br />
-       made with <i style="color: #dd514c" class="icon-heart"></i> <a>@aayush</a>
+      <i style="color: #dd514c"  class="icon-wrench"></i> by <a href="http://github.com/jainaayush05">@aayush</a>
       </div>
     </div>
     <!-- Save Modal -->
-    <div id="saveModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="saveModal" style="padding:10px 10px;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        
+       
       </div>
       <div class="modal-body">
-        <input type="text" id="fname" placeholder="File name">
+        <div class="pull-left">
+			<input type="text" id="fname" placeholder="File name">
+		</div>
+		<div class="pull-right">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+			<button class="btn btn-primary" data-dismiss="modal" onclick="saveTextAsFile()">Download</button>
+		</div>
+		<br/>
       </div>
-      <div class="modal-footer pull-right">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button class="btn btn-primary" data-dismiss="modal" onclick="saveTextAsFile()">Download</button>
-      </div>
+      
     </div>
     <!-- Upload Modal -->
-    <div id="uploadModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    <div id="uploadModal" style="padding:10px 10px;"  class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	  <div class="modal-header">
         
       </div>
       <div class="modal-body">
-        <input type="file" id="fileToLoad">
+		<div class="pull-left">
+			 <input type="file" id="fileToLoad">
+		</div>
+		<div class="pull-right">
+			<button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
+			<button class="btn btn-primary" data-dismiss="modal" onclick="loadFileAsText()">Load File</button>
+		</div>
+       <br/>
        </div>
-      <div class="modal-footer pull-right">
-        <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
-        <button class="btn btn-primary" data-dismiss="modal" onclick="loadFileAsText()">Load File</button>
-      </div>
+     
     </div>
     <!-- share Modal -->
-    <div id="shareModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div id="shareModal" style="padding:10px 10px;" style="padding:10px 10px;" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-        
+       
       </div>
       <div class="modal-body">
-        http://www.code.it/qwesa
+        <center>Share this link to collaborate :<a href="<%= root_url%><%=params[:id]%>"><%= root_url%><%=params[:id]%></a></center><br/>
        </div>
       <div class="modal-footer pull-right">
         <button class="btn" data-dismiss="modal" aria-hidden="true">Cancel</button>
@@ -307,7 +312,7 @@
                         var hint
                         if(!isMobile.any()){
                           editor.focus();
-                          hint = "Write or paste code here then share. Anyone you share with will see code as it's typed.";
+                          hint = "Write your code here and share this link to collaborate with others.";
                         }else{
                           hint = "";
                         }
@@ -343,9 +348,10 @@
                         //Command
                         editor.commands.addCommand({
                         name: 'myCommand',
-                        bindKey: {win: 'Ctrl-M',  mac: 'Command-M'},
+                        bindKey: {win: 'Ctrl-P',  mac: 'Command-M'},
                         exec: function(editor) {
-                            alert(editor.getValue());
+						var fileNameToSaveAs="Codr";
+                            saveTextAsFile();
                         },
                         readOnly: true // false if this command should not apply in readOnly mode
                             });
@@ -487,7 +493,9 @@
 
                     // Number of online users is the number of objects in the presence list.
                     listRef.on("value", function(snap) {
-                      $("users").html(snap.numChildren());
+						var out;
+						if(snap.numChildren()==1){out="No User Online";}else{out=snap.numChildren()-1+" Online";}
+                      $("users").html(out);
                     });    
                   </script>
 
