@@ -264,25 +264,15 @@
             </div>
             <br />
             <div class="row-fluid">
+			<% @cookies.each do |fname|%>
               <ul class="inline">
-                <li><a href="#" style="color: rgb(175, 175, 175);">Untitled 1</a></li>
+                <li><a href="<%=root_url%><%=fname%>" style="color: rgb(175, 175, 175);"><%=fname%></a></li>
                 <li style="font-size: 10px;">Saturday, July 6th 10:23pm</li>
                 <li class="pull-right"><a href="#" style="color: rgb(175, 175, 175);"><i class="icon-trash"></i></a></li>
               </ul>
               <hr class="style-two">
-              <ul class="inline">
-                <li><a href="#" style="color: rgb(175, 175, 175);">Untitled 1</a></li>
-                <li style="font-size: 10px;">Saturday, July 6th 10:23pm</li>
-                <li class="pull-right"><a href="#" style="color: rgb(175, 175, 175);"><i class="icon-trash"></i></a></li>
-              </ul>
-              <hr class="style-two">
-              <ul class="inline">
-                <li><a href="#" style="color: rgb(175, 175, 175);">Untitled 1</a></li>
-                <li style="font-size: 10px;">Saturday, July 6th 10:23pm</li>
-                <li class="pull-right"><a href="#" style="color: rgb(175, 175, 175);"><i class="icon-trash"></i></a></li>
-              </ul>
-              <hr class="style-two">
-     
+			 <%end%>
+             
             </div>
       </div>
     
